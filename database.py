@@ -3,7 +3,7 @@ from model import Todo
 # MongoDB driver
 import motor.motor_asyncio
 
-MONGODB_URL = 'mongodb://localhost:27017'
+MONGODB_URL = 'mongodb+srv://andresdgarcia96:FBYrl5ZaALWTl3i0@cluster0.4pladlx.mongodb.net/test'
 
 client = motor.motor_asyncio.AsyncIOMotorClient(MONGODB_URL)
 database = client.TodoList
