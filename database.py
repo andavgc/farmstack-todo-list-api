@@ -1,11 +1,15 @@
 from model import Todo
+from dotenv import load_dotenv
+import os
 
 # MongoDB driver
+
+load_dotenv()
+CONNECTION_STRING = os.getenv("DB")
+
 import motor.motor_asyncio
 
-MONGODB_URL = 'mongodb+srv://andresdgarcia96:FBYrl5ZaALWTl3i0@cluster0.4pladlx.mongodb.net/test'
-
-client = motor.motor_asyncio.AsyncIOMotorClient(MONGODB_URL)
+client = motor.motor_asyncio.AsyncIOMotorClient(CONNECTION_STRING)
 database = client.TodoList
 collection = database.todo
 
